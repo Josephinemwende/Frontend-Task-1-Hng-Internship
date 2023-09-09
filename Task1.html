@@ -16,8 +16,8 @@
                 <div class="right-elements">
                     <p data-testid ="currentDayOfTheWeek" id="day"></p>
                     <p data-testid = "currentUTCTime" id="time"></p>
-                    <p data-testid ="myTrack"><b><i>Track: </i></b> Frontend</p>
-                    <p data-testid = "githubURL"><b><i>GithubUrl: </i></b><a href ="https://github.com/Josephinemwende">github</a></p>
+                    <p data-testid ="myTrack">Frontend</p>
+                    <p data-testid = "githubURL"><a href ="https://github.com/Josephinemwende">GitHub</a></p>
                 </div>
             </div>
             <script>
@@ -28,13 +28,10 @@
                 const currentDayOfTheWeek = daysOfTheWeek[currentDay.getDay()];
                 document.getElementById("day").innerHTML = currentDayOfTheWeek;
 
-                //display current time
-                const currentTime = new Date();
-                const hours = currentTime.getHours();
-                const minutes = currentTime.getMinutes();
-                const seconds = currentTime.getSeconds();
-                const time = `${hours}:${minutes}:${seconds}`;
-                document.getElementById("time").innerHTML = time;
+                //display current time in milliseconds
+                const currentTimeInMilliseconds = Date.now();
+                document.getElementById("time").innerHTML = `${currentTimeInMilliseconds}`;
+                
             </script>
         </body>
 </html>
