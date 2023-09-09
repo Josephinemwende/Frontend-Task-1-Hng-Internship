@@ -1,0 +1,20 @@
+.container{
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+}
+.left-elements{
+    font-size:1.5em;
+}
+.left-elements #image{
+    border-radius: 50%;
+    max-width:100%;
+    height:auto; 
+}
+h1{
+    text-align: center;
+    margin:0;
+}
+.right-elements{
+    font-size: 1.5em;
+}

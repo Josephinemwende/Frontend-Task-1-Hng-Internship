@@ -1,23 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
     <head><title>Profile</title>
+        <h1><em>Profile</em></h1>
         <meta charset ="UTF-8">
         <meta name ="viewport" content="width=device-width, initial-scale=1.0">
-        <script>
-            function dayAndTime();
-
-
-
-        </script>
+        <link rel="stylesheet" href="styles.css">
     </head>
         <body>
-            <div>
-                <p data-testid="slackUserName">Josephine Mwenswa</p>
-                <img data-testid ="slackDisplayImage" src="./image/profile-picture.jpg" alt="Josephine Mwenswa">
-                <p data-testid ="currentDayOfTheWeek"></p>
-                <p></p>
-                <p data-testid ="myTrack">Frontend</p>
-                <p data-testid = "githubURL"><a href ="https://github.com/Josephinemwende">github</a></p>
+            <hr>
+            <div class = "container">
+                <div class="left-elements">
+                    <img data-testid ="slackDisplayImage" id="image" src="./image/profile-picture.jpg" alt="Josephine Mwenswa" width="200" height="150">
+                    <p data-testid="slackUserName"><i><b>Josephine Mwenswa</b></i></p>
+                    </div>
+                <div class="right-elements">
+                    <p data-testid ="currentDayOfTheWeek" id="day"></p>
+                    <p data-testid = "currentUTCTime" id="time"></p>
+                    <p data-testid ="myTrack"><b><i>Track: </i></b> Frontend</p>
+                    <p data-testid = "githubURL"><b><i>GithubUrl: </i></b><a href ="https://github.com/Josephinemwende">github</a></p>
+                </div>
             </div>
+            <script>
+                // display the current day of the week
+                // create an array for the days of the week
+                const daysOfTheWeek= ["Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday"];
+                const currentDay = new Date();
+                const currentDayOfTheWeek = daysOfTheWeek[currentDay.getDay()];
+                document.getElementById("day").innerHTML = currentDayOfTheWeek;
+
+                //display current time
+                const currentTime = new Date();
+                const hours = currentTime.getHours();
+                const minutes = currentTime.getMinutes();
+                const seconds = currentTime.getSeconds();
+                const time = `${hours}:${minutes}:${seconds}`;
+                document.getElementById("time").innerHTML = time;
+            </script>
         </body>
 </html>
